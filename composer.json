@@ -1,0 +1,37 @@
+{
+    "name": "laradic/filesystem",
+    "description": "A filesystem package",
+    "keywords": ["filesystem", "laravel"],
+    "license": "MIT",
+    "authors": [
+        {"name": "Robin Radic", "homepage": "https://github.com/robinradic", "email": "robin@laradic.nl", "role": "Developer"}
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "laradic/support": "~1.0",
+        "illuminate/filesystem": ">=5.0.0 <5.3.0",
+        "symfony/filesystem": "~2.8|~3.0"
+    },
+    "require-dev": {
+        "laradic/testing": "~1.0",
+        "laradic/phing": "~1.0"
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {
+            "Laradic\\Filesystem\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Laradic\\Tests\\Filesystem\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
