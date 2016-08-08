@@ -13,19 +13,9 @@ use Laradic\Support\ServiceProvider;
 */
 class FilesystemServiceProvider extends ServiceProvider
 {
-    protected $dir = __DIR__;
+    #protected $configFiles = [ 'laradic.filesystem' ];
 
-    protected $configFiles = [ 'laradic.filesystem' ];
-
-    protected $weaklings = [
-
-    ];
-
-    protected $aliases = [
-
-    ];
-
-    protected $singletons = [
+    protected $shared = [
         'fs' => Filesystem::class
     ];
 

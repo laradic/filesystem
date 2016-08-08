@@ -1,10 +1,10 @@
 {
     "name": "laradic/filesystem",
-    "description": "A filesystem package",
+    "description": "Laravel Filesystem extras. Provides a lot of extra functionality like recusive globbing (globstar `**`), Temporary file/dir, extra helpers, etc",
     "keywords": ["filesystem", "laravel"],
     "license": "MIT",
     "authors": [
-        {"name": "Robin Radic", "homepage": "https://github.com/robinradic", "email": "robin@laradic.nl", "role": "Developer"}
+        {"name": "Robin Radic", "homepage": "http://robin.radic.nl", "email": "robin@laradic.nl", "role": "Developer"}
     ],
     "require": {
         "php": ">=5.5.9",

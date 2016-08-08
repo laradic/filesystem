@@ -1,4 +1,4 @@
-<project name="sebwite/assets">
+<project name="laradic/assets">
 
     <target name="build" depends="phpcbf,phpunit"/>
 
