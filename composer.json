@@ -1,7 +1,7 @@
 {
     "name": "laradic/filesystem",
-    "description": "Laravel Filesystem extras. Provides a lot of extra functionality like recusive globbing (globstar `**`), Temporary file/dir, extra helpers, etc",
-    "keywords": ["filesystem", "laravel"],
+    "description": "Filesystem library based on Laravel and Symfony with a lot of extras. Provides a lot of extra functionality like recusive globbing (globstar `**`), Temporary file/dir, extra helpers, etc",
+    "keywords": ["filesystem"],
     "license": "MIT",
     "authors": [
         {"name": "Robin Radic", "homepage": "http://robin.radic.nl", "email": "robin@laradic.nl", "role": "Developer"}

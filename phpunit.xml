@@ -11,7 +11,7 @@
          syntaxCheck="false"
 >
     <testsuites>
-        <testsuite name="Support Assets Suite">
+        <testsuite name="Filesystem Suite">
             <directory suffix=".php">./tests/</directory>
         </testsuite>
     </testsuites>
