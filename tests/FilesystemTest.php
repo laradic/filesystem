@@ -1,8 +1,13 @@
 <?php
 /**
- * Part of the Laradic PHP packages.
+ * Part of the Laradic PHP Packages.
  *
- * MIT License and copyright information bundled with this package in the LICENSE file
+ * Copyright (c) 2018. Robin Radic.
+ *
+ * The license can be found in the package and online at https://laradic.mit-license.org.
+ *
+ * @copyright Copyright 2018 (c) Robin Radic
+ * @license https://laradic.mit-license.org The MIT License
  */
 namespace Laradic\Tests\Filesystem;
 
@@ -626,62 +631,62 @@ class FilesystemTest extends TestCase
         $this->assertFilePermissions(753, $dir);
         $this->assertFilePermissions(400, $file);
     }
-
-    public function testChmodWrongMod()
-    {
-        $this->markAsSkippedIfChmodIsMissing();
-        $dir = $this->workspace . DIRECTORY_SEPARATOR . 'file';
-        touch($dir);
-        $this->filesystem->chmod($dir, 'Wrongmode');
-    }
-
-    public function testChmodRecursive()
-    {
-        $this->markAsSkippedIfChmodIsMissing();
-        $dir = $this->workspace . DIRECTORY_SEPARATOR . 'dir';
-        mkdir($dir);
-        $file = $dir . DIRECTORY_SEPARATOR . 'file';
-        touch($file);
-        $this->filesystem->chmod($file, 0400, 0000, true);
-        $this->filesystem->chmod($dir, 0753, 0000, true);
-        $this->assertFilePermissions(753, $dir);
-        $this->assertFilePermissions(753, $file);
-    }
-
-    public function testChmodAppliesUmask()
-    {
-        $this->markAsSkippedIfChmodIsMissing();
-        $file = $this->workspace . DIRECTORY_SEPARATOR . 'file';
-        touch($file);
-        $this->filesystem->chmod($file, 0770, 0022);
-        $this->assertFilePermissions(750, $file);
-    }
-
-    public function testChmodChangesModeOfArrayOfFiles()
-    {
-        $this->markAsSkippedIfChmodIsMissing();
-        $directory = $this->workspace . DIRECTORY_SEPARATOR . 'directory';
-        $file      = $this->workspace . DIRECTORY_SEPARATOR . 'file';
-        $files     = [ $directory, $file ];
-        mkdir($directory);
-        touch($file);
-        $this->filesystem->chmod($files, 0753);
-        $this->assertFilePermissions(753, $file);
-        $this->assertFilePermissions(753, $directory);
-    }
-
-    public function testChmodChangesModeOfTraversableFileObject()
-    {
-        $this->markAsSkippedIfChmodIsMissing();
-        $directory = $this->workspace . DIRECTORY_SEPARATOR . 'directory';
-        $file      = $this->workspace . DIRECTORY_SEPARATOR . 'file';
-        $files     = new \ArrayObject([ $directory, $file ]);
-        mkdir($directory);
-        touch($file);
-        $this->filesystem->chmod($files, 0753);
-        $this->assertFilePermissions(753, $file);
-        $this->assertFilePermissions(753, $directory);
-    }
+//
+//    public function testChmodWrongMod()
+//    {
+//        $this->markAsSkippedIfChmodIsMissing();
+//        $dir = $this->workspace . DIRECTORY_SEPARATOR . 'file';
+//        touch($dir);
+//        $this->filesystem->chmod($dir, 'Wrongmode');
+//    }
+//
+//    public function testChmodRecursive()
+//    {
+//        $this->markAsSkippedIfChmodIsMissing();
+//        $dir = $this->workspace . DIRECTORY_SEPARATOR . 'dir';
+//        mkdir($dir);
+//        $file = $dir . DIRECTORY_SEPARATOR . 'file';
+//        touch($file);
+//        $this->filesystem->chmod($file, 0400, 0000, true);
+//        $this->filesystem->chmod($dir, 0753, 0000, true);
+//        $this->assertFilePermissions(753, $dir);
+//        $this->assertFilePermissions(753, $file);
+//    }
+//
+//    public function testChmodAppliesUmask()
+//    {
+//        $this->markAsSkippedIfChmodIsMissing();
+//        $file = $this->workspace . DIRECTORY_SEPARATOR . 'file';
+//        touch($file);
+//        $this->filesystem->chmod($file, 0770, 0022);
+//        $this->assertFilePermissions(750, $file);
+//    }
+//
+//    public function testChmodChangesModeOfArrayOfFiles()
+//    {
+//        $this->markAsSkippedIfChmodIsMissing();
+//        $directory = $this->workspace . DIRECTORY_SEPARATOR . 'directory';
+//        $file      = $this->workspace . DIRECTORY_SEPARATOR . 'file';
+//        $files     = [ $directory, $file ];
+//        mkdir($directory);
+//        touch($file);
+//        $this->filesystem->chmod($files, 0753);
+//        $this->assertFilePermissions(753, $file);
+//        $this->assertFilePermissions(753, $directory);
+//    }
+//
+//    public function testChmodChangesModeOfTraversableFileObject()
+//    {
+//        $this->markAsSkippedIfChmodIsMissing();
+//        $directory = $this->workspace . DIRECTORY_SEPARATOR . 'directory';
+//        $file      = $this->workspace . DIRECTORY_SEPARATOR . 'file';
+//        $files     = new \ArrayObject([ $directory, $file ]);
+//        mkdir($directory);
+//        touch($file);
+//        $this->filesystem->chmod($files, 0753);
+//        $this->assertFilePermissions(753, $file);
+//        $this->assertFilePermissions(753, $directory);
+//    }
 
     public function testChown()
     {

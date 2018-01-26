@@ -2,23 +2,22 @@
 /**
  * Part of the Laradic PHP Packages.
  *
- * Copyright (c) 2017. Robin Radic.
+ * Copyright (c) 2018. Robin Radic.
  *
  * The license can be found in the package and online at https://laradic.mit-license.org.
  *
- * @copyright Copyright 2017 (c) Robin Radic
+ * @copyright Copyright 2018 (c) Robin Radic
  * @license https://laradic.mit-license.org The MIT License
  */
 namespace Laradic\Filesystem;
 
 use BadMethodCallException;
 use Illuminate\Filesystem\Filesystem as IlluminateFilesystem;
+use Laradic\Support\Arr;
+use Laradic\Support\Path;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use RegexIterator;
-use Laradic\Support\Arr;
-
-use Laradic\Support\Path;
 use Symfony\Component\Filesystem\Filesystem as SymfonyFilesystem;
 
 
@@ -132,12 +131,13 @@ class Filesystem extends IlluminateFilesystem
      *
      * @param  string $folder
      * @param  string $pattern
+     * @param         $flags [optional]
      *
      * @return array
      */
-    public function search($folder, $pattern)
+    public function search($folder, $pattern, $flags)
     {
-        $dir      = new RecursiveDirectoryIterator($folder);
+        $dir      = new RecursiveDirectoryIterator($folder, $flags);
         $iterator = new RecursiveIteratorIterator($dir);
         $files    = new RegexIterator($iterator, $pattern, RegexIterator::GET_MATCH);
         $fileList = [ ];
